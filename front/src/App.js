@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "john",
+      username: "john-guerra",
       followers: [{}],
       busqueda:""
     };
@@ -31,6 +31,15 @@ class App extends Component {
       username:texto
     });
   }
+  componentDidMount () {
+      var url ="/getFollowers/"+this.state.username;
+    fetch(url).then((res) => res.json()).then((folls) => {
+      console.log(folls)
+      this.setState({followers: folls.data});
+      console.log(this.state.followers)
+    });
+  }
+  
   
   filter(texto){
       var url ="/getFollowers/"+texto;
