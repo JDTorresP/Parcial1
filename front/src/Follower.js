@@ -12,13 +12,22 @@ class Follower extends Component {
     constructor(props) {
         super(props);
     }
+
+   
+
     render() {
         return (
             <div>
                 <List>
+                    <a>
                     <ListItem
                         disabled={true}
-                        leftAvatar={< Avatar src = {
+                        leftAvatar={
+                            <div onClick={()=>{
+                                this.props.handleName(this.props.follower.login);
+                                this.props.filter();
+                                }}>
+                            < Avatar src = {
                         this.props.follower.avatar_url
                     }
                     size = {
@@ -26,9 +35,13 @@ class Follower extends Component {
                     }
                     style = {
                         style
-                    } />}>
+                    } />  </div>}
+                    onClick={()=>{
+                        console.log("hola")
+                    }}>
                         {this.props.follower.login}
                     </ListItem>
+                    </a>
                 </List>
             </div>
         );

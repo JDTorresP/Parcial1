@@ -23,6 +23,9 @@ class App extends Component {
       followers: [{}],
       busqueda:""
     };
+
+    this.handleName = this.handleName.bind(this);
+    this.filter= this.filter.bind(this);
   }
 
   handleName(texto){
@@ -67,7 +70,7 @@ class App extends Component {
     /></MuiThemeProvider>
           <h1 className="title">Active Followers for {this.state.username}</h1>
           <MuiThemeProvider muiTheme={muiTheme}>
-            <FollowerList followers={this.state.followers}/>
+            <FollowerList followers={this.state.followers} handleName= {this.handleName} filter = {this.filter}/>
           </MuiThemeProvider>
         </div>
       </div>

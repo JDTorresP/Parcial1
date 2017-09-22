@@ -16,7 +16,7 @@ class FollowerList extends Component {
 
         return this.props.followers.map(
             (t,i)=>{
-              return (<Follower follower={t} key={i}/>); 
+              return (<Follower follower={t} key={i} handleName = {this.props.handleName} filter = {this.props.filter}/>); 
             }
         );
     }
