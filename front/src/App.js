@@ -41,8 +41,8 @@ class App extends Component {
   }
   
   
-  filter(texto){
-      var url ="/getFollowers/"+texto;
+  filter(){
+      var url ="/getFollowers/"+this.state.username;
     fetch(url).then((res) => res.json()).then((folls) => {
       console.log(folls)
       this.setState({followers: folls.data});
@@ -59,7 +59,7 @@ class App extends Component {
            <MuiThemeProvider muiTheme={muiTheme}>          
           <SearchBar
       onChange={(e) => {this.handleName(e)}}
-      onRequestSearch={(e) => {this.filter(e); console.log('request')}}
+      onRequestSearch={() => {this.filter();}}
       style={{
         margin: '0 auto',
         maxWidth: 800
