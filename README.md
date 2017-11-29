@@ -8,7 +8,7 @@ Secret Sauce: Se uso <a href="material-ui.com">Material ui</a> como componente p
 
 
 ## Instalacion
-* Descaragar o clonar el respositorio
+* Descargar o clonar el respositorio
 * Abrir el terminal (linea de comandos) `CTRL+R+CMD` en windows,`CTRL+ALT+T` en linux; en la carpeta descomprimida del repositorio
 * Ejecutar `npm start`en linea de comandos 
 * Abrir google chrome en la ruta `localhost:3001`:
